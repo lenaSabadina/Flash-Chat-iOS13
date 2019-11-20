@@ -29,5 +29,15 @@ struct FirebaseManager {
         }
     }
     
+    static func logout(completion: (Bool) -> Void) {
+        do{
+            try Auth.auth().signOut()
+            completion(true)
+        }
+        catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
+    
     
 }

@@ -16,10 +16,22 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.hidesBackButton = true
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
     }
     
-
+    @IBAction func logOutTapped(_ sender: UIBarButtonItem) {
+        
+        FirebaseManager.logout {(isSuccess) in
+            if isSuccess {
+                navigationController?.popToRootViewController(animated: true)
+            }
+            else {
+                print("Error")
+            }
+        }
+    }
+    
 }

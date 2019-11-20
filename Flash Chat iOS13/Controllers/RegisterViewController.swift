@@ -31,10 +31,6 @@ class RegisterViewController: UIViewController {
                     }
                     //   SVProgressHUD.dismiss()
                 }
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-                    self.emailTextfield.text = ""
-                    self.passwordTextfield.text = ""
-                }
             }
         }
         
