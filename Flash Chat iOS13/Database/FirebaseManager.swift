@@ -19,7 +19,15 @@ struct FirebaseManager {
            
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                completion(user, error)
-
             }
         }
+    
+    static func login(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            completion(user, error)
+        }
+    }
+    
+    
 }
