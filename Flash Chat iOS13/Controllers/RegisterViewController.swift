@@ -19,7 +19,7 @@ class RegisterViewController: UIViewController {
             
             FirebaseManager.createUser(email: email, password: password) { (user, error) in
                 if user != nil {
-                    self.performSegue(withIdentifier: "RegisterToChat", sender: self)
+                    self.performSegue(withIdentifier: Constants.registerSegue, sender: self)
                 }
                 else {
                     if let receivedError = error {

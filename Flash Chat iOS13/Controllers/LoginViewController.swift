@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
             
             FirebaseManager.login(email: email, password: password) { (user, error) in
                 if user != nil {
-                    self.performSegue(withIdentifier: "LoginToChat", sender: self)
+                    self.performSegue(withIdentifier: Constants.loginSegue, sender: self)
                     print("Log in successful!")
                 }
                 else {
