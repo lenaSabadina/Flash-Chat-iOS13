@@ -14,6 +14,14 @@ struct FirebaseManager {
     static func configure() {
         FirebaseApp.configure()
     }
+   
+    static var db: Firestore {
+        return Firestore.firestore()
+    }
+    
+    static var usersEmail: String? {
+        return Auth.auth().currentUser?.email
+    }
     
     static func createUser(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
            

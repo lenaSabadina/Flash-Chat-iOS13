@@ -21,6 +21,8 @@
 		71D383872382D6C700C32B78 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D383862382D6C700C32B78 /* FirebaseManager.swift */; };
 		71D383892386D87300C32B78 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D383882386D87300C32B78 /* Constants.swift */; };
 		71D3838B2386DB7500C32B78 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D3838A2386DB7500C32B78 /* Message.swift */; };
+		71D3838E2387FA3800C32B78 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D3838C2387FA3800C32B78 /* MessageCell.swift */; };
+		71D3838F2387FA3800C32B78 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D3838D2387FA3800C32B78 /* MessageCell.xib */; };
 		DE18BE316616CF8CAF49E493 /* Pods_Flash_Chat_iOS13.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEC422A56447CCE949EA591 /* Pods_Flash_Chat_iOS13.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		71D383862382D6C700C32B78 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		71D383882386D87300C32B78 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71D3838A2386DB7500C32B78 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		71D3838C2387FA3800C32B78 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		71D3838D2387FA3800C32B78 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		DCEC422A56447CCE949EA591 /* Pods_Flash_Chat_iOS13.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flash_Chat_iOS13.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				0B62817C235DEE8100E35CAF /* Main.storyboard */,
+				71D3838C2387FA3800C32B78 /* MessageCell.swift */,
+				71D3838D2387FA3800C32B78 /* MessageCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B628183235DEE8400E35CAF /* LaunchScreen.storyboard in Resources */,
+				71D3838F2387FA3800C32B78 /* MessageCell.xib in Resources */,
 				0B628180235DEE8400E35CAF /* Assets.xcassets in Resources */,
 				71D3837E2382D00300C32B78 /* GoogleService-Info.plist in Resources */,
 				0B62819E235F0F4D00E35CAF /* README.md in Resources */,
@@ -265,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B62818B235DF00000E35CAF /* WelcomeViewController.swift in Sources */,
+				71D3838E2387FA3800C32B78 /* MessageCell.swift in Sources */,
 				0B628177235DEE8100E35CAF /* AppDelegate.swift in Sources */,
 				71D383872382D6C700C32B78 /* FirebaseManager.swift in Sources */,
 				71D3838B2386DB7500C32B78 /* Message.swift in Sources */,
