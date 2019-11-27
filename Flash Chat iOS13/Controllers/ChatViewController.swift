@@ -42,6 +42,8 @@ class ChatViewController: UIViewController {
                             
                             DispatchQueue.main.async {
                               self.tableView.reloadData()
+                                let indexpath = IndexPath(row: self.messages.count - 1, section: 0)
+                                self.tableView.scrollToRow(at: indexpath, at: .top, animated: true)
                             }
                         }
                     }
@@ -60,7 +62,9 @@ class ChatViewController: UIViewController {
                 if let e = error {
                     print("There was a problem saving data to FireStore, \(e)")
                 } else {
-                    print("Successfully saved data.")
+                    DispatchQueue.main.async {
+                        self.messageTextfield.text = ""
+                    }
                 }
             }
         }
@@ -87,8 +91,22 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let message = messages[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! MessageCell
-        cell.label.text = messages[indexPath.row].body
+        cell.label.text = message.body
+        
+        if message.sender == FirebaseManager.usersEmail {
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+            cell.messageBubble.backgroundColor = UIColor(named: Constants.BrandColors.lightPurple)
+            cell.label.textColor = UIColor(named: Constants.BrandColors.purple)
+        } else {
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            cell.messageBubble.backgroundColor = UIColor(named: Constants.BrandColors.purple)
+            cell.label.textColor = UIColor(named: Constants.BrandColors.lightPurple)
+        }
         return cell
     }
 }
